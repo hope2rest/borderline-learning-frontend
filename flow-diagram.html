@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이음 서비스 플로우 다이어그램</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: #6b7280;
+        }
+        
+        .flow-diagram {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0px;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        /* 회원가입 및 로그인 */
+        .login-box {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+            color: #2d3748;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            width: 180px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .login-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .box-title {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .box-desc {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        /* 인증 확인 */
+        .auth-box {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            width: 180px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(72, 187, 120, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .auth-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .login-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        
+        .method-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+        }
+        
+        /* 사용자 유형별 컨테이너 */
+        .user-types-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .user-type-box {
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            width: 150px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            margin-bottom: 15px;
+        }
+        
+        .user-type-box:hover {
+            transform: translateY(-3px);
+        }
+        
+        .user-type-box.teacher {
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+        }
+        
+        .user-type-box.parent {
+            background: linear-gradient(135deg, #38b2ac 0%, #319795 100%);
+        }
+        
+        .user-type-box.student {
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+        }
+        
+        /* 기능 박스들 */
+        .feature-boxes {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .feature-box {
+            background: linear-gradient(135deg, #805ad5 0%, #6b46c1 100%);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(128, 90, 213, 0.3);
+            transition: transform 0.2s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* 통합 시스템 */
+        .system-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .system-box {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            width: 180px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(66, 153, 225, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .admin-box {
+            background: linear-gradient(135deg, #805ad5 0%, #6b46c1 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            width: 180px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(128, 90, 213, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .system-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .admin-box:hover {
+            transform: translateY(-3px);
+        }
+        
+        .system-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .system-sub-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+        
+        /* 화살표 */
+        .arrow {
+            color: #6b7280;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+            align-self: flex-start;
+            margin-top: 60px;
+            line-height: 1;
+        }
+        
+        .arrow-bidirectional {
+            color: #6b7280;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+            align-self: flex-start;
+            margin-top: 60px;
+            line-height: 1;
+        }
+        
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #0064FF 0%, #0047B3 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 100, 255, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 100, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadImage()">📥 이미지 다운로드</button>
+    
+    <div class="container" id="diagram">
+        <div class="header">
+            <div class="title">🐣 경계선 지능인 학습 지원 서비스 이음</div>
+            <div class="subtitle">서비스 플로우 다이어그램</div>
+        </div>
+        
+        <div class="flow-diagram">
+            <!-- 1단계: 회원가입 및 로그인 -->
+            <div class="flow-step">
+                <div class="login-box">
+                    <div class="box-title">🔐 회원가입 및 로그인</div>
+                    <div class="login-methods">
+                        <div class="method-box">카카오톡 인증</div>
+                        <div class="method-box">네이버 인증</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow">→</div>
+            
+            <!-- 2단계: 인증 확인 -->
+            <div class="flow-step">
+                <div class="auth-box">
+                    <div class="box-title">🔍 인증 후 권한 확인</div>
+                    <div class="box-desc">4가지 사용자 유형 중 선택</div>
+                </div>
+            </div>
+            
+            <div class="arrow">→</div>
+            
+            <!-- 3단계: 통합 시스템 -->
+            <div class="flow-step">
+                <div class="system-container">
+                    <div class="system-box">
+                        <div class="box-title">🔧 통합 시스템</div>
+                        <div class="system-grid">
+                            <div class="system-sub-box">Frontend<br>Vue.js + Pinia</div>
+                            <div class="system-sub-box">Backend<br>Django + SQLite</div>
+                            <div class="system-sub-box">Server<br>RESTful API</div>
+                            <div class="system-sub-box">API<br>Gemini + OpenAI</div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-box">
+                        <div class="box-title">⚙️ 관리자</div>
+                        <div class="box-desc">각 유형별 사용자 관리</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow-bidirectional">↔</div>
+            
+            <!-- 4단계: 사용자 유형별 기능 -->
+            <div class="flow-step">
+                <div class="user-types-section">
+                    <!-- 선생님 -->
+                    <div>
+                        <div class="user-type-box teacher">
+                            <div class="box-title">👩‍🏫 선생님</div>
+                            <div class="box-desc">교육자 대시보드</div>
+                        </div>
+                        <div class="feature-boxes">
+                            <div class="feature-box">📚 학습 자료 업로드</div>
+                            <div class="feature-box">📝 자료 요약 및 내용 확인</div>
+                            <div class="feature-box">🔄 쉬운 말 번역 및 이미지 생성</div>
+                            <div class="feature-box">👥 담당 학생 관리</div>
+                            <div class="feature-box">❓ 생성된 문제 관리</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 학부모 -->
+                    <div>
+                        <div class="user-type-box parent">
+                            <div class="box-title">👨‍👩‍👧 학부모</div>
+                            <div class="box-desc">자녀 학습 모니터링</div>
+                        </div>
+                        <div class="feature-boxes">
+                            <div class="feature-box">📊 자녀 학습 현황 조회</div>
+                            <div class="feature-box">📅 학습 일정 확인</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 학습자 -->
+                    <div>
+                        <div class="user-type-box student">
+                            <div class="box-title">🧑‍🎓 학습자</div>
+                            <div class="box-desc">맞춤형 학습 경험</div>
+                        </div>
+                        <div class="feature-boxes">
+                            <div class="feature-box">🎯 퀴즈를 통한 학습</div>
+                            <div class="feature-box">💡 힌트 확인</div>
+                            <div class="feature-box">🏆 본인 성취 확인</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function downloadImage() {
+            const element = document.getElementById('diagram');
+            html2canvas(element, {
+                scale: 2,
+                backgroundColor: '#ffffff',
+                useCORS: true,
+                allowTaint: true,
+                width: element.scrollWidth,
+                height: element.scrollHeight,
+                windowWidth: element.scrollWidth,
+                windowHeight: element.scrollHeight
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = '이음_서비스_플로우_다이어그램.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>

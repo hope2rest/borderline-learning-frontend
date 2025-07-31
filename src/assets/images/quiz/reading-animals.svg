@@ -1,0 +1,79 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C1E1C1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dogGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D2691E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0522D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="200" height="200" fill="url(#bgGradient)"/>
+  
+  <!-- 잔디 -->
+  <rect y="160" width="200" height="40" fill="#32CD32"/>
+  
+  <!-- 강아지 몸 -->
+  <ellipse cx="100" cy="140" rx="30" ry="20" fill="url(#dogGradient)"/>
+  
+  <!-- 강아지 머리 -->
+  <circle cx="100" cy="110" r="20" fill="url(#dogGradient)"/>
+  
+  <!-- 강아지 귀 -->
+  <ellipse cx="85" cy="100" rx="8" ry="15" fill="#8B4513"/>
+  <ellipse cx="115" cy="100" rx="8" ry="15" fill="#8B4513"/>
+  
+  <!-- 강아지 코 -->
+  <circle cx="100" cy="115" r="3" fill="black"/>
+  
+  <!-- 강아지 눈 -->
+  <circle cx="93" cy="105" r="3" fill="black"/>
+  <circle cx="107" cy="105" r="3" fill="black"/>
+  <circle cx="94" cy="104" r="1" fill="white"/>
+  <circle cx="108" cy="104" r="1" fill="white"/>
+  
+  <!-- 강아지 입 -->
+  <path d="M 100 118 Q 95 122 90 118" stroke="black" stroke-width="2" fill="none"/>
+  <path d="M 100 118 Q 105 122 110 118" stroke="black" stroke-width="2" fill="none"/>
+  
+  <!-- 강아지 꼬리 -->
+  <ellipse cx="130" cy="135" rx="12" ry="6" fill="url(#dogGradient)" transform="rotate(30 130 135)"/>
+  
+  <!-- 강아지 다리 -->
+  <rect x="85" y="155" width="8" height="15" fill="url(#dogGradient)" rx="4"/>
+  <rect x="107" y="155" width="8" height="15" fill="url(#dogGradient)" rx="4"/>
+  
+  <!-- 구름 -->
+  <circle cx="40" cy="40" r="15" fill="white"/>
+  <circle cx="58" cy="40" r="18" fill="white"/>
+  <circle cx="76" cy="40" r="15" fill="white"/>
+  
+  <!-- 햇빛 -->
+  <circle cx="160" cy="35" r="12" fill="#FFD700"/>
+  
+  <!-- 글자 옵션들 -->
+  <rect x="10" y="10" width="60" height="25" fill="white" stroke="#4169E1" stroke-width="2" rx="5"/>
+  <text x="40" y="28" font-family="Arial" font-size="14" fill="#4169E1" text-anchor="middle" font-weight="bold">고양이</text>
+  
+  <rect x="10" y="45" width="60" height="25" fill="white" stroke="#32CD32" stroke-width="2" rx="5"/>
+  <text x="40" y="63" font-family="Arial" font-size="14" fill="#32CD32" text-anchor="middle" font-weight="bold">강아지</text>
+  
+  <rect x="10" y="80" width="60" height="25" fill="white" stroke="#FF6B6B" stroke-width="2" rx="5"/>
+  <text x="40" y="98" font-family="Arial" font-size="14" fill="#FF6B6B" text-anchor="middle" font-weight="bold">토끼</text>
+  
+  <!-- 화살표 -->
+  <path d="M 75 140 L 85 140" stroke="#FF1493" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- 화살표 마커 정의 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#FF1493"/>
+    </marker>
+  </defs>
+  
+  <!-- 물음표 -->
+  <text x="130" y="25" font-family="Arial Black" font-size="24" fill="#FF1493" font-weight="bold">?</text>
+</svg>

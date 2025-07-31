@@ -1,0 +1,56 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="appleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8E53;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 배경 하늘 -->
+  <rect width="200" height="120" fill="url(#skyGradient)"/>
+  
+  <!-- 땅 -->
+  <rect y="120" width="200" height="80" fill="#90EE90"/>
+  
+  <!-- 나무 -->
+  <rect x="150" y="80" width="20" height="40" fill="#8B4513"/>
+  <circle cx="160" cy="80" r="25" fill="#228B22"/>
+  
+  <!-- 사과 3개 (세기 쉽게 배치) -->
+  <!-- 첫 번째 사과 -->
+  <circle cx="50" cy="150" r="15" fill="url(#appleGradient)"/>
+  <rect x="48" y="135" width="4" height="8" fill="#8B4513"/>
+  <ellipse cx="52" cy="138" rx="3" ry="2" fill="#228B22"/>
+  
+  <!-- 두 번째 사과 -->
+  <circle cx="100" cy="150" r="15" fill="url(#appleGradient)"/>
+  <rect x="98" y="135" width="4" height="8" fill="#8B4513"/>
+  <ellipse cx="102" cy="138" rx="3" ry="2" fill="#228B22"/>
+  
+  <!-- 세 번째 사과 -->
+  <circle cx="25" cy="170" r="15" fill="url(#appleGradient)"/>
+  <rect x="23" y="155" width="4" height="8" fill="#8B4513"/>
+  <ellipse cx="27" cy="158" rx="3" ry="2" fill="#228B22"/>
+  
+  <!-- 구름 -->
+  <circle cx="30" cy="30" r="12" fill="white"/>
+  <circle cx="45" cy="30" r="15" fill="white"/>
+  <circle cx="60" cy="30" r="12" fill="white"/>
+  
+  <!-- 태양 -->
+  <circle cx="170" cy="30" r="15" fill="#FFD700"/>
+  <line x1="150" y1="30" x2="140" y2="30" stroke="#FFD700" stroke-width="3"/>
+  <line x1="190" y1="30" x2="200" y2="30" stroke="#FFD700" stroke-width="3"/>
+  <line x1="170" y1="10" x2="170" y2="0" stroke="#FFD700" stroke-width="3"/>
+  <line x1="170" y1="50" x2="170" y2="60" stroke="#FFD700" stroke-width="3"/>
+  
+  <!-- 큰 숫자 3 -->
+  <text x="120" y="45" font-family="Arial Black" font-size="24" fill="#4169E1" font-weight="bold">3</text>
+  
+  <!-- 물음표 -->
+  <text x="75" y="180" font-family="Arial Black" font-size="20" fill="#FF1493" font-weight="bold">?</text>
+</svg>

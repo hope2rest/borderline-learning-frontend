@@ -1,0 +1,28 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- 배경 -->
+<rect width="300" height="200" fill="#FFF3E0"/>
+<!-- 팔/손목 -->
+<ellipse cx="150" cy="100" rx="80" ry="45" fill="#FDBCB4" stroke="#E0A89C" stroke-width="2"/>
+<!-- 시계 밴드 -->
+<rect x="110" y="90" width="80" height="20" fill="#8B4513" rx="10"/>
+<!-- 시계 본체 -->
+<circle cx="150" cy="100" r="35" fill="#E0E0E0" stroke="#424242" stroke-width="3"/>
+<circle cx="150" cy="100" r="30" fill="#FFF" stroke="#616161" stroke-width="2"/>
+<!-- 시계 눈금 -->
+<circle cx="150" cy="75" r="2" fill="#333"/>
+<circle cx="175" cy="100" r="2" fill="#333"/>
+<circle cx="150" cy="125" r="2" fill="#333"/>
+<circle cx="125" cy="100" r="2" fill="#333"/>
+<!-- 작은 눈금들 -->
+<circle cx="168" cy="82" r="1" fill="#666"/>
+<circle cx="168" cy="118" r="1" fill="#666"/>
+<circle cx="132" cy="82" r="1" fill="#666"/>
+<circle cx="132" cy="118" r="1" fill="#666"/>
+<!-- 시계 바늘 -->
+<line x1="150" y1="100" x2="150" y2="85" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+<line x1="150" y1="100" x2="165" y2="105" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+<!-- 중심점 -->
+<circle cx="150" cy="100" r="3" fill="#333"/>
+<!-- 용두 -->
+<rect x="185" y="95" width="10" height="10" fill="#666" rx="2"/>
+</svg>
